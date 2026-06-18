@@ -15,8 +15,7 @@ const marcellus = Marcellus({
 
 export const metadata: Metadata = {
   title: "SHAHANA | Luxury Pakistani Fashion House",
-  description:
-    "SHAHANA — modern royal luxury fashion rooted in Pakistani heritage.",
+  description: "SHAHANA — modern royal luxury fashion rooted in Pakistani heritage.",
 };
 
 export default function RootLayout({
@@ -26,6 +25,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </head>
       <body className={`${inter.variable} ${marcellus.variable} antialiased`}>
         {children}
       </body>
