@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Marcellus } from "next/font/google";
 import "./globals.css";
+import CartDrawer from "./components/CartDrawer";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -25,11 +26,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </head>
       <body className={`${inter.variable} ${marcellus.variable} antialiased`}>
         {children}
+        <CartDrawer />
       </body>
     </html>
   );
