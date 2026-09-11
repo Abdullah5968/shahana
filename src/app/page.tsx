@@ -1,3 +1,38 @@
+const products = [
+  {
+    id: 1,
+    name: "Zara Embroidered Lawn 3-Piece",
+    price: 6500,
+    salePrice: null,
+    color: "bg-pink-100",
+    textColor: "text-pink-400",
+  },
+  {
+    id: 2,
+    name: "Alina Printed Stitched Kurti",
+    price: 4200,
+    salePrice: 3200,
+    color: "bg-orange-100",
+    textColor: "text-orange-400",
+  },
+  {
+    id: 3,
+    name: "Noor Chiffon Formal Dress",
+    price: 9800,
+    salePrice: null,
+    color: "bg-purple-100",
+    textColor: "text-purple-400",
+  },
+  {
+    id: 4,
+    name: "Sana Cotton Unstitched Suit",
+    price: 3500,
+    salePrice: 2800,
+    color: "bg-teal-100",
+    textColor: "text-teal-400",
+  },
+];
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-white">
@@ -76,6 +111,42 @@ export default function Home() {
               Sale
             </p>
           </a>
+        </div>
+      </section>
+
+      <section className="bg-zinc-50 py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl sm:text-3xl font-serif text-center text-black mb-12">
+            New Arrivals
+          </h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+            {products.map((product) => (
+              <a href="#" key={product.id} className="group block">
+                <div className={`aspect-[3/4] ${product.color} flex items-center justify-center overflow-hidden`}>
+                  <span className={`${product.textColor} text-sm`}>Image</span>
+                </div>
+                <p className="mt-3 text-sm text-gray-800 group-hover:text-black">
+                  {product.name}
+                </p>
+                <div className="mt-1 flex items-center gap-2">
+                  {product.salePrice ? (
+                    <>
+                      <span className="text-sm font-medium text-black">
+                        PKR {product.salePrice.toLocaleString()}
+                      </span>
+                      <span className="text-xs text-gray-400 line-through">
+                        PKR {product.price.toLocaleString()}
+                      </span>
+                    </>
+                  ) : (
+                    <span className="text-sm font-medium text-black">
+                      PKR {product.price.toLocaleString()}
+                    </span>
+                  )}
+                </div>
+              </a>
+            ))}
+          </div>
         </div>
       </section>
     </div>
