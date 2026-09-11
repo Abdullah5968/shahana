@@ -93,7 +93,7 @@ export default async function Home() {
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
             {products.map((product) => (
-              <a href="#" key={product.id} className="group block">
+              <a href={`/product/${product.id}`} key={product.id} className="group block">
                 <div className="aspect-[3/4] bg-gray-100 flex items-center justify-center overflow-hidden">
                   <span className="text-gray-400 text-sm">Image</span>
                 </div>
