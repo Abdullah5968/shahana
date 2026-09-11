@@ -1,5 +1,5 @@
 import { prisma } from "@/lib/db";
-
+import SiteHeader from "@/components/SiteHeader";
 export default async function Home() {
   const products = await prisma.product.findMany({
     where: { isNew: true },
@@ -12,23 +12,7 @@ export default async function Home() {
         Free delivery on orders above PKR 5,000 - Cash on Delivery available across Pakistan
       </div>
 
-      <header className="border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex items-center justify-between">
-          <div className="text-2xl sm:text-3xl font-serif tracking-widest text-black">
-            SHAHANA
-          </div>
-          <nav className="hidden md:flex items-center gap-8 text-sm tracking-wide text-gray-800">
-            <a href="#" className="hover:text-black">New Arrivals</a>
-            <a href="#" className="hover:text-black">Ready to Wear</a>
-            <a href="#" className="hover:text-black">Unstitched</a>
-            <a href="#" className="hover:text-black">Sale</a>
-          </nav>
-          <div className="flex items-center gap-5 text-gray-800">
-            <span className="text-sm cursor-pointer">Search</span>
-            <span className="text-sm cursor-pointer">Cart (0)</span>
-          </div>
-        </div>
-      </header>
+            <SiteHeader />
 
       <section className="bg-zinc-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32 text-center">

@@ -1,5 +1,7 @@
 import { prisma } from "@/lib/db";
+import SiteHeader from "@/components/SiteHeader";
 import { notFound } from "next/navigation";
+import AddToCartSection from "@/components/AddToCartSection";
 
 export default async function ProductPage({
   params,
@@ -18,16 +20,7 @@ export default async function ProductPage({
 
   return (
     <div className="min-h-screen bg-white">
-      <header className="border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex items-center justify-between">
-          <a href="/" className="text-2xl sm:text-3xl font-serif tracking-widest text-black">
-            SHAHANA
-          </a>
-          <div className="flex items-center gap-5 text-gray-800">
-            <span className="text-sm cursor-pointer">Cart (0)</span>
-          </div>
-        </div>
-      </header>
+            <SiteHeader />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -64,23 +57,13 @@ export default async function ProductPage({
               {product.description}
             </p>
 
-            <div className="mb-8">
-              <p className="text-sm font-medium text-black mb-3">Select Size</p>
-              <div className="flex gap-2">
-                {product.sizes.map((size) => (
-                  <button
-                    key={size}
-                    className="border border-gray-300 px-4 py-2 text-sm hover:border-black transition-colors"
-                  >
-                    {size}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            <button className="w-full bg-black text-white py-3 text-sm tracking-wide hover:bg-gray-800 transition-colors mb-4">
-              Add to Cart
-            </button>
+            <AddToCartSection
+              id={product.id}
+              name={product.name}
+              price={product.price}
+              salePrice={product.salePrice}
+              sizes={product.sizes}
+            />
 
             <div className="border-t border-gray-200 pt-6 mt-6 space-y-2 text-sm text-gray-600">
               <p>SKU: {product.sku}</p>
