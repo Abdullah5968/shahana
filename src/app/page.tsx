@@ -38,6 +38,46 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <h2 className="text-2xl sm:text-3xl font-serif text-center text-black mb-12">
+          Shop by Category
+        </h2>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+          <a href="#" className="group">
+            <div className="aspect-[3/4] bg-rose-100 flex items-center justify-center overflow-hidden">
+              <span className="text-rose-400 text-sm">Image</span>
+            </div>
+            <p className="mt-3 text-center text-sm tracking-wide text-gray-800 group-hover:text-black">
+              Ready to Wear
+            </p>
+          </a>
+          <a href="#" className="group">
+            <div className="aspect-[3/4] bg-amber-100 flex items-center justify-center overflow-hidden">
+              <span className="text-amber-500 text-sm">Image</span>
+            </div>
+            <p className="mt-3 text-center text-sm tracking-wide text-gray-800 group-hover:text-black">
+              Unstitched
+            </p>
+          </a>
+          <a href="#" className="group">
+            <div className="aspect-[3/4] bg-emerald-100 flex items-center justify-center overflow-hidden">
+              <span className="text-emerald-500 text-sm">Image</span>
+            </div>
+            <p className="mt-3 text-center text-sm tracking-wide text-gray-800 group-hover:text-black">
+              Formal Wear
+            </p>
+          </a>
+          <a href="#" className="group">
+            <div className="aspect-[3/4] bg-zinc-200 flex items-center justify-center overflow-hidden">
+              <span className="text-zinc-500 text-sm">Image</span>
+            </div>
+            <p className="mt-3 text-center text-sm tracking-wide text-gray-800 group-hover:text-black">
+              Sale
+            </p>
+          </a>
+        </div>
+      </section>
     </div>
   );
 }
