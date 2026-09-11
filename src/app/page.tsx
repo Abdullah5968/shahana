@@ -149,6 +149,56 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <footer className="bg-black text-gray-300">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
+          <div>
+            <div className="text-xl font-serif tracking-widest text-white mb-4">
+              SHAHANA
+            </div>
+            <p className="text-sm text-gray-400 leading-relaxed">
+              Premium Pakistani women fashion. Elegant, modern, and made for you.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-white text-sm font-medium mb-4 tracking-wide">Shop</h3>
+            <ul className="space-y-2 text-sm text-gray-400">
+              <li><a href="#" className="hover:text-white">New Arrivals</a></li>
+              <li><a href="#" className="hover:text-white">Ready to Wear</a></li>
+              <li><a href="#" className="hover:text-white">Unstitched</a></li>
+              <li><a href="#" className="hover:text-white">Sale</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-white text-sm font-medium mb-4 tracking-wide">Help</h3>
+            <ul className="space-y-2 text-sm text-gray-400">
+              <li><a href="#" className="hover:text-white">Track Order</a></li>
+              <li><a href="#" className="hover:text-white">Shipping Policy</a></li>
+              <li><a href="#" className="hover:text-white">Return and Exchange</a></li>
+              <li><a href="#" className="hover:text-white">FAQ</a></li>
+              <li><a href="#" className="hover:text-white">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-white text-sm font-medium mb-4 tracking-wide">Get in Touch</h3>
+            <p className="text-sm text-gray-400 mb-3">
+              Cash on Delivery available across Pakistan
+            </p>
+            <a href="#" className="inline-flex items-center gap-2 text-sm text-green-400 hover:text-green-300">
+              WhatsApp Us
+            </a>
+          </div>
+        </div>
+
+        <div className="border-t border-gray-800 py-6">
+          <p className="text-center text-xs text-gray-500">
+            Copyright 2026 SHAHANA. All rights reserved.
+          </p>
+        </div>
+      </footer>
     </div>
   );
 }
