@@ -1,39 +1,11 @@
-const products = [
-  {
-    id: 1,
-    name: "Zara Embroidered Lawn 3-Piece",
-    price: 6500,
-    salePrice: null,
-    color: "bg-pink-100",
-    textColor: "text-pink-400",
-  },
-  {
-    id: 2,
-    name: "Alina Printed Stitched Kurti",
-    price: 4200,
-    salePrice: 3200,
-    color: "bg-orange-100",
-    textColor: "text-orange-400",
-  },
-  {
-    id: 3,
-    name: "Noor Chiffon Formal Dress",
-    price: 9800,
-    salePrice: null,
-    color: "bg-purple-100",
-    textColor: "text-purple-400",
-  },
-  {
-    id: 4,
-    name: "Sana Cotton Unstitched Suit",
-    price: 3500,
-    salePrice: 2800,
-    color: "bg-teal-100",
-    textColor: "text-teal-400",
-  },
-];
+import { prisma } from "@/lib/db";
 
-export default function Home() {
+export default async function Home() {
+  const products = await prisma.product.findMany({
+    where: { isNew: true },
+    take: 4,
+  });
+
   return (
     <div className="min-h-screen bg-white">
       <div className="bg-black text-white text-center text-xs sm:text-sm py-2 px-4 tracking-wide">
@@ -122,8 +94,8 @@ export default function Home() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
             {products.map((product) => (
               <a href="#" key={product.id} className="group block">
-                <div className={`aspect-[3/4] ${product.color} flex items-center justify-center overflow-hidden`}>
-                  <span className={`${product.textColor} text-sm`}>Image</span>
+                <div className="aspect-[3/4] bg-gray-100 flex items-center justify-center overflow-hidden">
+                  <span className="text-gray-400 text-sm">Image</span>
                 </div>
                 <p className="mt-3 text-sm text-gray-800 group-hover:text-black">
                   {product.name}
