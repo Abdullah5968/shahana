@@ -38,6 +38,7 @@ export default async function AdminDashboard() {
               <th className="p-3">Order Notes</th>
               <th className="p-3">Total</th>
               <th className="p-3">Status</th>
+              <th className="p-3">Receipt</th>
             </tr>
           </thead>
           <tbody>
@@ -61,6 +62,11 @@ export default async function AdminDashboard() {
                 <td className="p-3 whitespace-nowrap">
                   <OrderStatusSelect orderId={order.id} currentStatus={order.status} />
                 </td>
+                <td className="p-3 whitespace-nowrap">
+  <a href={`/admin/orders/${order.id}`} className="text-maroon underline">
+    View / Print
+  </a>
+</td>
               </tr>
             ))}
           </tbody>

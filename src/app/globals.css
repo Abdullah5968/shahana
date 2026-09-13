@@ -219,3 +219,20 @@
 @media (min-width: 640px) {
   .auto-scroll-card { flex: 0 0 240px; }
 }
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  body * {
+    visibility: hidden;
+  }
+  #receipt, #receipt * {
+    visibility: visible;
+  }
+  #receipt {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+}
