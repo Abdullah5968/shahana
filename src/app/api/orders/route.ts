@@ -113,7 +113,24 @@ export async function POST(req: NextRequest) {
         data: { stock: { decrement: cartItem.quantity } },
       });
     }
-
+    try {
+      await fetch(
+        `https://api.textbee.dev/api/v1/gateway/devices/${process.env.TEXTBEE_DEVICE_ID}/send-sms`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "x-api-key": process.env.TEXTBEE_API_KEY!,
+          },
+          body: JSON.stringify({
+            recipients: [process.env.ADMIN_PHONE],
+            message: `New SHAHANA Order ${order.orderNumber}\nCustomer: ${customerName}\nPhone: ${phone}\nTotal: PKR ${total}\nCity: ${city}\nPayment: COD`,
+          }),
+        }
+      );
+    } catch (smsError) {
+      console.error("SMS notification failed:", smsError);
+    }
     return NextResponse.json({ orderNumber: order.orderNumber });
   } catch (error) {
     console.error("Order creation failed:", error);
