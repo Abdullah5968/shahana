@@ -43,7 +43,7 @@ export default function AddToCartSection({ id, name, price, salePrice, sizes }: 
               onClick={() => setSelectedSize(size)}
               className={`border px-4 py-2 text-sm transition-colors ${
                 selectedSize === size
-                  ? "border-black bg-black text-white"
+                  ? "border-black bg-maroon text-white"
                   : "border-gray-300 hover:border-black"
               }`}
             >
@@ -55,7 +55,7 @@ export default function AddToCartSection({ id, name, price, salePrice, sizes }: 
 
       <button
         onClick={handleAddToCart}
-        className="w-full bg-black text-white py-3 text-sm tracking-wide hover:bg-gray-800 transition-colors mb-4"
+        className="w-full bg-maroon text-white py-3 text-sm tracking-wide hover:bg-maroon-dark transition-colors mb-4"
       >
         {added ? "Added to Cart ✓" : "Add to Cart"}
       </button>

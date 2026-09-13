@@ -29,17 +29,17 @@ export default async function ProductPage({
           </div>
 
           <div>
-            <p className="text-xs uppercase tracking-wide text-gray-500 mb-2">
+            <p className="text-xs uppercase tracking-wide text-maroon mb-2">
               {product.category}
             </p>
-            <h1 className="text-2xl sm:text-3xl font-serif text-black mb-4">
+            <h1 className="text-2xl sm:text-3xl font-serif text-charcoal mb-4">
               {product.name}
             </h1>
 
             <div className="flex items-center gap-3 mb-6">
               {product.salePrice ? (
                 <>
-                  <span className="text-xl font-medium text-black">
+                  <span className="text-xl font-medium text-charcoal">
                     PKR {product.salePrice.toLocaleString()}
                   </span>
                   <span className="text-base text-gray-400 line-through">
@@ -47,7 +47,7 @@ export default async function ProductPage({
                   </span>
                 </>
               ) : (
-                <span className="text-xl font-medium text-black">
+                <span className="text-xl font-medium text-charcoal">
                   PKR {product.price.toLocaleString()}
                 </span>
               )}
