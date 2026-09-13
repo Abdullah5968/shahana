@@ -28,6 +28,7 @@ export default async function Home() {
       <HeroSection />
       <CategorySection />
       <NewArrivalsSection products={products} />
+      <BestsellersSection />
       <SiteFooter />
     </div>
   );
@@ -50,7 +51,7 @@ function MarqueeRow() {
       {marqueeItems.map((text, j) => (
         <span key={j} className="mx-8 text-xs sm:text-sm tracking-wide flex items-center gap-8">
           {text}
-          <span className="text-gold">star</span>
+<span className="text-gold">&#10022;</span>
         </span>
       ))}
     </div>
@@ -137,7 +138,46 @@ function NewArrivalsSection({ products }: { products: ProductType[] }) {
     </section>
   );
 }
+async function BestsellersSection() {
+  const allProducts = await prisma.product.findMany({ take: 10 });
+  const doubled = allProducts.concat(allProducts);
 
+  return (
+    <section className="py-24 bg-white overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <p className="text-maroon text-xs tracking-[0.3em] mb-3">CUSTOMER FAVOURITES</p>
+          <h2 className="text-3xl sm:text-4xl font-serif text-charcoal">Bestsellers</h2>
+        </div>
+      </div>
+      <div className="auto-scroll-wrap">
+        <div className="auto-scroll-track">
+          {doubled.map((product, i) => (
+            <BestsellerCard key={i} product={product} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function BestsellerCard({ product }: { product: ProductType }) {
+  const price = product.salePrice ?? product.price;
+  return (
+    <a href={`/product/${product.id}`} className="auto-scroll-card group block">
+      <div className="relative aspect-[3/4] bg-blush overflow-hidden">
+        <div className="absolute inset-0 flex items-center justify-center text-gray-400 text-sm">
+          Image
+        </div>
+        {product.salePrice && <span className="sale-badge">SALE</span>}
+      </div>
+      <p className="product-name">{product.name}</p>
+      <span className="text-sm font-medium text-charcoal">
+        PKR {price.toLocaleString()}
+      </span>
+    </a>
+  );
+}
 function ProductCard({ product }: { product: ProductType }) {
   return (
     <a href={`/product/${product.id}`} className="group block">

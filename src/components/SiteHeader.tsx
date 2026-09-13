@@ -7,20 +7,22 @@ export default function SiteHeader() {
   const { totalItems } = useCart();
 
   return (
-    <header className="border-b border-gray-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex items-center justify-between">
-        <Link href="/" className="text-2xl sm:text-3xl font-serif tracking-widest text-black">
+    <header className="site-header">
+      <div className="site-header-inner">
+        <Link href="/" className="brand-logo">
+          <span className="brand-ornament">&#10022;</span>
           SHAHANA
+          <span className="brand-ornament">&#10022;</span>
         </Link>
-        <nav className="hidden md:flex items-center gap-8 text-sm tracking-wide text-gray-800">
-          <a href="#" className="hover:text-black">New Arrivals</a>
-          <a href="#" className="hover:text-black">Ready to Wear</a>
-          <a href="#" className="hover:text-black">Unstitched</a>
-          <a href="#" className="hover:text-black">Sale</a>
+        <nav className="site-nav">
+          <a href="#" className="site-nav-link">New Arrivals</a>
+          <a href="#" className="site-nav-link">Ready to Wear</a>
+          <a href="#" className="site-nav-link">Unstitched</a>
+          <a href="#" className="site-nav-link">Sale</a>
         </nav>
-        <div className="flex items-center gap-5 text-gray-800">
-          <span className="text-sm cursor-pointer">Search</span>
-          <Link href="/cart" className="text-sm cursor-pointer">
+        <div className="site-header-actions">
+          <span className="site-header-icon">Search</span>
+          <Link href="/cart" className="site-header-icon">
             Cart ({totalItems})
           </Link>
         </div>
