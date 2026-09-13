@@ -1,4 +1,5 @@
 import { prisma } from "@/lib/db";
+import OrderStatusSelect from "@/components/OrderStatusSelect";
 
 export default async function AdminDashboard() {
   const orders = await prisma.order.findMany({
@@ -21,27 +22,45 @@ export default async function AdminDashboard() {
         <StatCard label="Total Sales" value={`PKR ${totalSales.toLocaleString()}`} />
       </div>
 
-      <div className="bg-white border border-gray-200">
-        <table className="w-full text-sm">
+      <div className="bg-white border border-gray-200 overflow-x-auto">
+        <table className="text-sm border-collapse">
           <thead>
-            <tr className="border-b border-gray-200 text-left text-gray-500">
-              <th className="p-4">Order #</th>
-              <th className="p-4">Customer</th>
-              <th className="p-4">Phone</th>
-              <th className="p-4">City</th>
-              <th className="p-4">Total</th>
-              <th className="p-4">Status</th>
+            <tr className="border-b border-gray-200 text-left text-gray-500 whitespace-nowrap">
+              <th className="p-3">Order #</th>
+              <th className="p-3">Name</th>
+              <th className="p-3">Phone</th>
+              <th className="p-3">Email</th>
+              <th className="p-3">Province</th>
+              <th className="p-3">City</th>
+              <th className="p-3">Area</th>
+              <th className="p-3">Complete Address</th>
+              <th className="p-3">Postal Code</th>
+              <th className="p-3">Order Notes</th>
+              <th className="p-3">Total</th>
+              <th className="p-3">Status</th>
             </tr>
           </thead>
           <tbody>
             {orders.map((order) => (
-              <tr key={order.id} className="border-b border-gray-100">
-                <td className="p-4 font-medium text-charcoal">{order.orderNumber}</td>
-                <td className="p-4">{order.customerName}</td>
-                <td className="p-4">{order.phone}</td>
-                <td className="p-4">{order.city}</td>
-                <td className="p-4">PKR {order.total.toLocaleString()}</td>
-                <td className="p-4">{order.status}</td>
+              <tr key={order.id} className="border-b border-gray-100 align-top">
+                <td className="p-3 font-medium text-charcoal whitespace-nowrap">
+                  {order.orderNumber}
+                </td>
+                <td className="p-3 whitespace-nowrap">{order.customerName}</td>
+                <td className="p-3 whitespace-nowrap">{order.phone}</td>
+                <td className="p-3 whitespace-nowrap">{order.email || "-"}</td>
+                <td className="p-3 whitespace-nowrap">{order.province}</td>
+                <td className="p-3 whitespace-nowrap">{order.city}</td>
+                <td className="p-3 whitespace-nowrap">{order.area}</td>
+                <td className="p-3 min-w-[220px]">{order.address}</td>
+                <td className="p-3 whitespace-nowrap">{order.postalCode || "-"}</td>
+                <td className="p-3 min-w-[150px]">{order.notes || "-"}</td>
+                <td className="p-3 whitespace-nowrap">
+                  PKR {order.total.toLocaleString()}
+                </td>
+                <td className="p-3 whitespace-nowrap">
+                  <OrderStatusSelect orderId={order.id} currentStatus={order.status} />
+                </td>
               </tr>
             ))}
           </tbody>
