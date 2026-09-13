@@ -105,10 +105,10 @@ export default function CheckoutPage() {
       <div className="min-h-screen bg-white">
         <SiteHeader />
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
-          <h1 className="text-2xl font-serif text-black mb-4">Your cart is empty</h1>
+          <h1 className="text-2xl font-serif text-charcoal mb-4">Your cart is empty</h1>
           <Link
             href="/"
-            className="inline-block bg-black text-white px-8 py-3 text-sm tracking-wide hover:bg-gray-800 transition-colors"
+            className="inline-block bg-maroon text-white px-8 py-3 text-sm tracking-wide hover:bg-maroon-dark transition-colors"
           >
             Continue Shopping
           </Link>
@@ -121,7 +121,7 @@ export default function CheckoutPage() {
     <div className="min-h-screen bg-white">
       <SiteHeader />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <h1 className="text-2xl sm:text-3xl font-serif text-black mb-10">Checkout</h1>
+        <h1 className="text-2xl sm:text-3xl font-serif text-charcoal mb-10">Checkout</h1>
 
         <div className="grid grid-cols-1 md:grid-cols-5 gap-12">
           <form onSubmit={handleSubmit} className="md:col-span-3 space-y-5">
@@ -131,7 +131,7 @@ export default function CheckoutPage() {
                 type="text"
                 value={form.customerName}
                 onChange={(e) => handleChange("customerName", e.target.value)}
-                className="w-full border border-gray-300 px-4 py-2 text-sm focus:border-black outline-none"
+                className="w-full border border-gray-300 px-4 py-2 text-sm focus:border-maroon outline-none"
               />
               {errors.customerName && (
                 <p className="text-xs text-red-600 mt-1">{errors.customerName}</p>
@@ -145,7 +145,7 @@ export default function CheckoutPage() {
                 placeholder="03001234567"
                 value={form.phone}
                 onChange={(e) => handleChange("phone", e.target.value)}
-                className="w-full border border-gray-300 px-4 py-2 text-sm focus:border-black outline-none"
+                className="w-full border border-gray-300 px-4 py-2 text-sm focus:border-maroon outline-none"
               />
               {errors.phone && <p className="text-xs text-red-600 mt-1">{errors.phone}</p>}
             </div>
@@ -156,7 +156,7 @@ export default function CheckoutPage() {
                 type="email"
                 value={form.email}
                 onChange={(e) => handleChange("email", e.target.value)}
-                className="w-full border border-gray-300 px-4 py-2 text-sm focus:border-black outline-none"
+                className="w-full border border-gray-300 px-4 py-2 text-sm focus:border-maroon outline-none"
               />
             </div>
 
@@ -166,7 +166,7 @@ export default function CheckoutPage() {
                 <select
                   value={form.province}
                   onChange={(e) => handleChange("province", e.target.value)}
-                  className="w-full border border-gray-300 px-4 py-2 text-sm focus:border-black outline-none"
+                  className="w-full border border-gray-300 px-4 py-2 text-sm focus:border-maroon outline-none"
                 >
                   <option value="">Select</option>
                   {PAKISTANI_PROVINCES.map((p) => (
@@ -186,7 +186,7 @@ export default function CheckoutPage() {
                   type="text"
                   value={form.city}
                   onChange={(e) => handleChange("city", e.target.value)}
-                  className="w-full border border-gray-300 px-4 py-2 text-sm focus:border-black outline-none"
+                  className="w-full border border-gray-300 px-4 py-2 text-sm focus:border-maroon outline-none"
                 />
                 {errors.city && <p className="text-xs text-red-600 mt-1">{errors.city}</p>}
               </div>
@@ -198,7 +198,7 @@ export default function CheckoutPage() {
                 type="text"
                 value={form.area}
                 onChange={(e) => handleChange("area", e.target.value)}
-                className="w-full border border-gray-300 px-4 py-2 text-sm focus:border-black outline-none"
+                className="w-full border border-gray-300 px-4 py-2 text-sm focus:border-maroon outline-none"
               />
               {errors.area && <p className="text-xs text-red-600 mt-1">{errors.area}</p>}
             </div>
@@ -209,7 +209,7 @@ export default function CheckoutPage() {
                 value={form.address}
                 onChange={(e) => handleChange("address", e.target.value)}
                 rows={3}
-                className="w-full border border-gray-300 px-4 py-2 text-sm focus:border-black outline-none"
+                className="w-full border border-gray-300 px-4 py-2 text-sm focus:border-maroon outline-none"
               />
               {errors.address && (
                 <p className="text-xs text-red-600 mt-1">{errors.address}</p>
@@ -222,7 +222,7 @@ export default function CheckoutPage() {
                 type="text"
                 value={form.postalCode}
                 onChange={(e) => handleChange("postalCode", e.target.value)}
-                className="w-full border border-gray-300 px-4 py-2 text-sm focus:border-black outline-none"
+                className="w-full border border-gray-300 px-4 py-2 text-sm focus:border-maroon outline-none"
               />
             </div>
 
@@ -232,7 +232,7 @@ export default function CheckoutPage() {
                 value={form.notes}
                 onChange={(e) => handleChange("notes", e.target.value)}
                 rows={2}
-                className="w-full border border-gray-300 px-4 py-2 text-sm focus:border-black outline-none"
+                className="w-full border border-gray-300 px-4 py-2 text-sm focus:border-maroon outline-none"
               />
             </div>
 
@@ -247,7 +247,7 @@ export default function CheckoutPage() {
             <button
               type="submit"
               disabled={submitting}
-              className="w-full bg-black text-white py-3 text-sm tracking-wide hover:bg-gray-800 transition-colors disabled:opacity-50"
+              className="w-full bg-maroon text-white py-3 text-sm tracking-wide hover:bg-maroon-dark transition-colors disabled:opacity-50"
             >
               {submitting ? "Placing Order..." : "Place Order"}
             </button>
@@ -255,7 +255,7 @@ export default function CheckoutPage() {
 
           <div className="md:col-span-2">
             <div className="border border-gray-200 p-6">
-              <h2 className="text-sm font-medium text-black mb-4">Order Summary</h2>
+              <h2 className="text-sm font-medium text-charcoal mb-4">Order Summary</h2>
               <div className="space-y-3 mb-4">
                 {items.map((item) => (
                   <div
@@ -269,7 +269,7 @@ export default function CheckoutPage() {
                   </div>
                 ))}
               </div>
-              <div className="border-t border-gray-200 pt-4 flex justify-between text-base font-medium text-black">
+              <div className="border-t border-gray-200 pt-4 flex justify-between text-base font-medium text-charcoal">
                 <span>Total</span>
                 <span>PKR {totalPrice.toLocaleString()}</span>
               </div>

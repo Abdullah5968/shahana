@@ -23,7 +23,7 @@ export default async function OrderConfirmationPage({
     <div className="min-h-screen bg-white">
       <SiteHeader />
       <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
-        <h1 className="text-2xl sm:text-3xl font-serif text-black mb-4">
+        <h1 className="text-2xl sm:text-3xl font-serif text-charcoal mb-4">
           Thank you for shopping with SHAHANA
         </h1>
         <p className="text-gray-600 mb-8">
@@ -33,7 +33,7 @@ export default async function OrderConfirmationPage({
         <div className="border border-gray-200 text-left p-6 mb-8">
           <div className="flex justify-between mb-4">
             <span className="text-sm text-gray-500">Order Number</span>
-            <span className="text-sm font-medium text-black">{order.orderNumber}</span>
+            <span className="text-sm font-medium text-charcoal">{order.orderNumber}</span>
           </div>
 
           <div className="space-y-2 mb-4">
@@ -54,7 +54,7 @@ export default async function OrderConfirmationPage({
               <span>Shipping</span>
               <span>{order.shipping === 0 ? "Free" : `PKR ${order.shipping.toLocaleString()}`}</span>
             </div>
-            <div className="flex justify-between text-base font-medium text-black">
+            <div className="flex justify-between text-base font-medium text-charcoal">
               <span>Total</span>
               <span>PKR {order.total.toLocaleString()}</span>
             </div>
@@ -70,7 +70,7 @@ export default async function OrderConfirmationPage({
 
         <Link
           href="/"
-          className="inline-block bg-black text-white px-8 py-3 text-sm tracking-wide hover:bg-gray-800 transition-colors"
+          className="inline-block text-maroon text-white px-8 py-3 text-sm tracking-wide hover:bg-maroon-dark transition-colors"
         >
           Continue Shopping
         </Link>

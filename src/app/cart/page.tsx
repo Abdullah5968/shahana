@@ -12,13 +12,13 @@ export default function CartPage() {
       <div className="min-h-screen bg-white">
         <SiteHeader />
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
-          <h1 className="text-2xl font-serif text-black mb-4">Your cart is empty</h1>
+          <h1 className="text-2xl font-serif text-charcoal mb-4">Your cart is empty</h1>
           <p className="text-gray-600 mb-8">
             Looks like you haven&apos;t added anything yet.
           </p>
           <Link
             href="/"
-            className="inline-block bg-black text-white px-8 py-3 text-sm tracking-wide hover:bg-gray-800 transition-colors"
+            className="inline-block bg-maroon text-white px-8 py-3 text-sm tracking-wide hover:bg-maroon-dark transition-colors"
           >
             Continue Shopping
           </Link>
@@ -31,7 +31,7 @@ export default function CartPage() {
     <div className="min-h-screen bg-white">
       <SiteHeader />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <h1 className="text-2xl sm:text-3xl font-serif text-black mb-10">
+        <h1 className="text-2xl sm:text-3xl font-serif text-charcoal mb-10">
           Your Cart
         </h1>
 
@@ -46,9 +46,9 @@ export default function CartPage() {
               </div>
 
               <div className="flex-1">
-                <p className="text-sm font-medium text-black">{item.name}</p>
+                <p className="text-sm font-medium text-charcoal">{item.name}</p>
                 <p className="text-xs text-gray-500 mt-1">Size: {item.size}</p>
-                <p className="text-sm text-black mt-2">
+                <p className="text-sm text-charcoal mt-2">
                   PKR {item.price.toLocaleString()}
                 </p>
               </div>
@@ -69,7 +69,7 @@ export default function CartPage() {
                 </button>
               </div>
 
-              <div className="w-24 text-right text-sm font-medium text-black">
+              <div className="w-24 text-right text-sm font-medium text-charcoal">
                 PKR {(item.price * item.quantity).toLocaleString()}
               </div>
 
@@ -93,13 +93,13 @@ export default function CartPage() {
               <span>Shipping</span>
               <span>Calculated at checkout</span>
             </div>
-            <div className="flex justify-between text-base font-medium text-black border-t border-gray-200 pt-4 mb-6">
+            <div className="flex justify-between text-base font-medium text-charcoal border-t border-gray-200 pt-4 mb-6">
               <span>Total</span>
               <span>PKR {totalPrice.toLocaleString()}</span>
             </div>
             <Link
               href="/checkout"
-              className="block w-full text-center bg-black text-white py-3 text-sm tracking-wide hover:bg-gray-800 transition-colors"
+              className="block w-full text-center bg-maroon text-white py-3 text-sm tracking-wide hover:bg-maroon-dark transition-colors"
             >
               Proceed to Checkout
             </Link>
