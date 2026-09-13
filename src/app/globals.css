@@ -1,5 +1,8 @@
 @import "tailwindcss";
-
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
 @theme {
   --font-serif: var(--font-playfair);
   --font-sans: var(--font-inter);
@@ -235,4 +238,28 @@
     left: 0;
     width: 100%;
   }
+}
+.mobile-menu-btn {
+  display: block;
+  font-size: 1.25rem;
+  color: var(--color-charcoal);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+@media (min-width: 768px) {
+  .mobile-menu-btn { display: none; }
+}
+
+.mobile-nav {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid #e5e0d8;
+  padding: 1rem 1.5rem;
+  gap: 1rem;
+  font-size: 0.9rem;
+  color: #444;
+}
+@media (min-width: 768px) {
+  .mobile-nav { display: none; }
 }

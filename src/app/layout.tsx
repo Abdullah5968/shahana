@@ -12,7 +12,10 @@ const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
 });
-
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
 export const metadata: Metadata = {
   title: "SHAHANA | Pakistani Women's Fashion",
   description: "SHAHANA — Premium Pakistani women's clothing. Shop the latest ready-to-wear, unstitched, and seasonal collections.",
